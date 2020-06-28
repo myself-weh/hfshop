@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.weh.hfshop.dao.CategoryDao">
+
+	<resultMap type="category" id="CapMap">
+		<id column="id" property="id"></id>
+		<collection property="children" column="id" select="list"></collection>
+	</resultMap>
+
+	
+	<insert id="add">
+		INSERT INTO hg_category(parent_id,name,path)
+			VALUES(#{parentId},#{name},#{path})
+	</insert>
+
+	
+	<update id="update">
+		UPDATE hg_category SET name=#{name},path=#{path}
+			WHERE id=#{id}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM hg_category WHERE id=#{value}
+	</delete>
+	
+	
+	<select id="list" resultMap="CapMap">
+		SELECT * FROM hg_category WHERE parent_id=#{value}
+	</select>
+	
+</mapper> 
