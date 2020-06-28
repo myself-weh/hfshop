@@ -20,7 +20,7 @@
 	
 	<!-- 注册中心  必须修改 -->
 	<dubbo:registry
-		address="zookeeper://192.168.110.130:2181"  />
+		address="zookeeper://192.168.161.129:2181"  />
 	<!-- 配置扫描包的路径 -->	
-	<dubbo:annotation package="com.zhuzg.goods.test"/> 
+	<dubbo:annotation package="com.weh.hfshop.test"/> 
 </beans>

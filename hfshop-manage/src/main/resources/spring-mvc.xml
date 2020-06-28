@@ -20,7 +20,7 @@
 	<!-- <import resource="classpath:applicationContext-kafka-consumer.xml"/>  -->
 	<!-- 扫描器   必须修改 -->
 	<context:component-scan
-		base-package="com.bawei.hgshop.controller" />
+		base-package="com.weh.hfshop.controller" />
 	<!-- 视图解析图 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -47,7 +47,7 @@
 	
 	<!-- 注册中心  必须修改 -->
 	<dubbo:registry
-		address="zookeeper://192.168.110.130:2081"  />
+		address="zookeeper://192.168.161.129:2181"  />
 	<!-- 配置扫描包的路径 -->	
-	<dubbo:annotation package="com.bawei.hgshop.controller"/> 
+	<dubbo:annotation package="com.weh.hfshop.controller"/> 
 </beans>

@@ -20,8 +20,9 @@ public class BrandController {
 	@RequestMapping("list")
 	public String list(Model model) {
 		List<Brand> list = brandService.list();
-		list.forEach(x->{System.out.println("x is " + x);});
-		return "list";
+		list.forEach(x->{System.out.println("brand列表 ： " + x);});
+		model.addAttribute("list", list);
+		return "brand/list";
 		
 	}
 }
