@@ -20,4 +20,6 @@ public interface SpecDao {
 	List<Spec> list(Spec spec);
 
 	Spec findById(int id);
+	
+	List<Spec> listAll();
 }

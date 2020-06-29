@@ -18,7 +18,7 @@ public class SpuVo extends Spu{
 	
 	//排序的字段名称
 	String orderColumn="";
-
+    
 	public SpuVo() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -42,7 +42,38 @@
 </div>
 
 <script>
-	
+	$(function () {
+		$.post('./cat/data',{},function(data){
+			$('#tree').treeview({
+				  data: data,         // data is not optional
+				  levels: 2,
+				});
+		})
+		
+		function initTree(){
+			$.post('./cat/data',{},function(data){
+				$('#tree').treeview({
+					  data: data,         // data is not optional
+					  levels: 2,
+					  onNodeSelected: function(event, data) {
+						  // 用于显示添加部分
+						  $("#parentNodeName").val(data.text)
+						  $("#parentId").val(data.id);
+						  $("#name").val("")
+						  
+						  // 用于显示修改和删除的部分
+						  $("#currentName").val(data.text)
+						  $("#currentId").val(data.id);
+						  $("#butnDel").prop("disabled",data.nodes.length>0)
+					  }
+					});
+			})
+		
+		}	
+		
+		//初始化树状图
+		initTree();
+	})
 	$.post('./cat/data',{},function(data){
 		$('#tree').treeview({
 			  data: data,         // data is not optional
