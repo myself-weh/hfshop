@@ -21,4 +21,7 @@ public interface SkuDao {
 
 	Sku findById(int id);
 	List<Sku> list(SkuVo skuvo);
+	
+	// 用于显示商品详情使用
+	List<Sku> ListBySpuId(int spuId);
 }

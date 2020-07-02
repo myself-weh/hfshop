@@ -89,7 +89,7 @@
 		    </div>
 		 </div>	
 		  <div class="form-group row">
-		  	<button type="button" class="btn btn-primary btn-lg btn-block" onclick="commitData()">提交数据</button>
+		  	<button type="button" class="btn btn-primary btn-lg btn-block" onclick="commitData()" style="width: 150px">提交数据</button>
 		  </div>	 
 		 
 	</form>

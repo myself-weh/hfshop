@@ -7,6 +7,15 @@
 		<association property="spu" column="spu_id" select="com.weh.hfshop.dao.SpuDao.findById"></association>
 	</resultMap>
 	
+	<!-- 继承即可 -->
+	<resultMap type="sku" id="SkuMapDetail" extends="SkuMap">
+		<collection property="options" column="id" select="com.weh.hfshop.dao.SpecDao.listOptionByskuId"></collection>
+	</resultMap>
+	
+	<!-- 继承即可 要求能够获取规格名称和属性值的名称 -->
+	<resultMap type="sku" id="SkuMapDetail2" extends="SkuMap">
+		<collection property="options" column="id" select="com.weh.hfshop.dao.SpecDao.listOptionByskuId2"></collection>
+	</resultMap>
 
 <!-- 	int insert(Sku sku); -->
 	<insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
@@ -54,6 +63,9 @@
 		WHERE id=#{id}
 	</update>
 	<!-- Sku findById(int id); -->
+	<select id="findById" resultMap="SkuMapDetail">
+		SELECT * FROM hg_sku WHERE id=#{value}
+	</select>
 	<!-- List<Sku> list(SkuVo skuvo);  greater than  ; less than  -->
 	<select id="list" resultMap="SkuMap">
 		SELECT * FROM hg_sku
@@ -71,5 +83,9 @@
 		ORDER BY id DESC
 	</select>
 	
+	
+	<select id="ListBySpuId" resultMap="SkuMapDetail2">
+		SELECT * FROM hg_sku WHERE spu_id=#{value}
+	</select>
 </mapper>
 
