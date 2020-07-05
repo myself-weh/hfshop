@@ -45,8 +45,8 @@
 	 				<td>${sku.price}</td>
 	 				<td><img src="/pic/${sku.image}" width="40" height="40"></td>
 	 				<td>
-	 					<button type="button" class="btn btn-danger btn-sm" onclick="del(${spu.id})">删除</button>
-						<button type="button" class="btn btn-warning btn-sm" onclick="toUpdate(${spu.id})">修改</button>
+	 					<button type="button" class="btn btn-danger btn-sm" onclick="del(${sku.id})">删除</button>
+						<button type="button" class="btn btn-warning btn-sm" onclick="toUpdate(${sku.id})">修改</button>
 	 				</td>
 	 			</tr>
 	 		</c:forEach>

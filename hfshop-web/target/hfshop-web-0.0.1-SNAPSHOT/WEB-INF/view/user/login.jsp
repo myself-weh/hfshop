@@ -44,12 +44,12 @@
   </div>
 
   <div class="form-label-group">
-    <input type="text" id="inputEmail" class="form-control" name="username" placeholder="用户名"  required="" autofocus="">
+    <input type="text" id="inputEmail" class="form-control" name="username" placeholder="用户名"  >
     <label for="inputEmail">用户名</label>
   </div>
 
   <div class="form-label-group">
-    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="密码" required="">
+    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="密码" >
     <label for="inputPassword">密码</label>
   </div>
   

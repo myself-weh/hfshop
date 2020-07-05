@@ -47,16 +47,16 @@
   </div>
 
   <div class="form-label-group">
-    <input type="text" id="inputEmail" class="form-control" name="username" placeholder="用户名"  required="" autofocus="">
+    <input type="text" id="inputEmail" class="form-control" name="username" placeholder="用户名"  >
     <label for="inputEmail">用户名</label>
   </div>
 
   <div class="form-label-group">
-    <input type="password" id="password" class="form-control" name="password" placeholder="密码" required="">
+    <input type="password" id="password" class="form-control" name="password" placeholder="密码" >
     <label for="password">密码</label>
   </div>
    <div class="form-label-group">
-    <input type="password" id="repassword" class="form-control" name="repassword" placeholder="密码" required="">
+    <input type="password" id="repassword" class="form-control" name="repassword" placeholder="密码" >
     <label for="repassword">重复密码</label>
   </div>
 

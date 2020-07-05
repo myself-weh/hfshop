@@ -1,11 +1,17 @@
 package com.weh.hfshop.service.impl;
 
-import org.apache.commons.codec.digest.DigestUtils;
+import java.util.List;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.weh.hfshop.dao.OrderDao;
 import com.weh.hfshop.dao.UserDao;
+import com.weh.hfshop.pojo.OrderDetail;
+import com.weh.hfshop.pojo.Orderz;
 import com.weh.hfshop.pojo.User;
 import com.weh.hfshop.service.UserService;
 
@@ -14,6 +20,8 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserDao userDao;
+	@Autowired
+	OrderDao orderDao;
 
 	/**
 	 * 注册
@@ -53,5 +61,18 @@ public class UserServiceImpl implements UserService {
 	public User getUserByName(String name) {
 		// TODO Auto-generated method stub
 		return userDao.findByName(name);
+	}
+
+	@Override
+	public PageInfo<Orderz> listOrderz(Integer uid, int page) {
+		PageHelper.startPage(page,5);
+		
+		return new PageInfo<Orderz>(orderDao.list(uid));
+	}
+
+	@Override
+	public List<OrderDetail> listOrderDetail(int oid) {
+		// TODO Auto-generated method stub
+		return orderDao.listDetail(oid);
 	}
 }
